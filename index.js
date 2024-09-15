@@ -60,11 +60,17 @@ function addToOrder(itemName) {
     orderItemList.appendChild(orderItem)
     // Calculate and update the total price
     const currentTotal = parseFloat(orderTotalElement.textContent);
-    const total = currentTotal  + 75.50;  // assuming each item costs R75.50
+    const total = currentTotal  + 75.35;  // assuming each item costs R75.35
 
 
     // Update the text content of the order total element with the new total
     orderTotalElement.textContent = total.toFixed(2);
+}
+
+// Function to clear total/cancel order
+function clearOrder() {
+    const orderItemList = document.getElementById('order-items');
+    const orderTotalElement = document.getElementById('order-total');
 }
 
 // Function to initialize the menu system
