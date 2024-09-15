@@ -11,35 +11,36 @@ function displayMenuItems(menu) {
     const menuContainer = document.getElementById('menu')
     // Loop through each category and its items in the menu object
     for(const category in menu) {
+          // Create an element to represent the category
+          const categoryElement = document.createElement('h3')
+          // Set the text content of the category element to the category name
+          categoryElement.textContent = category;
+          // Append the category element to the menu container
+          menuContainer.appendChild(categoryElement);
+  
+          // Create an element to represent a list of items
+          const itemList = document.createElement('ul');
+  
+          // Loop through the items in the category and create list items
+          menu[category].forEach(item => {
+              // Create a list item element
+              const listItems = document.createElement('li');
+  
+              //content for each list  item
+              listItems.textContent = item;
+  
+              // Attach a click event listener to the list items to add it to the order
+              listItems.addEventListener('click', () => addToOrder(item));
+  
+              // Append the list item to the list of items
+              listItems.appendChild(listItems);
+  
+          });
 
+          // Append the list of itmes to the menu container
+          menuContainer.appendChild(itemList);
     }
-        // Create an element to represent the category
-        const categoryElement = document.createElement('h4')
-        // Set the text content of the category element to the category name
-        categoryElement.textContent = category;
-        // Append the category element to the menu container
-        menuContainer.appendChild(categoryElement);
-
-        // Create an element to represent a list of items
-        const listItems = document.createElement('ul');
-
-        // Append a list of items element to the menu container
-
-        // Loop through the items in the category and create list items
-        menu[category].forEach(item => {
-            // Create a list item element
-            const listItems = document.createElement('li');
-
-            //content for each list  item
-            listItems.textContent = item;
-
-            // Attach a click event listener to the list items to add it to the order
-            listItems.addEventListener('click', () => addToOrder(item));
-
-            // Append the list item to the list of items
-            listItems.appendChild(listItems);
-
-        });
+      
 
             
 }
@@ -50,6 +51,7 @@ function addToOrder(itemName) {
     const orderItemList = document.getElementById('order-items');
     const orderTotalElement = document.getElementById('order-total');
     // Create a list item for the order
+    const  orderItem = document.createElement('li');
 
     // Set the text content of the list item to the item name
 
