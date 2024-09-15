@@ -70,6 +70,14 @@ main {
 #order-total {
     font-weight: bold;
 }
+button {
+    cursor: pointer;
+    margin-top: 1rem;
+}
+#result {
+    margin-top: 1rem;
+    
+}
 
 footer {
     text-align: center;

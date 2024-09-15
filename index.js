@@ -75,6 +75,8 @@ function clearOrder() {
     orderItemList.innerHTML = ""; //Empty string to clear orders
 
     orderTotalElement.textContent = "0.00"; // Reset total to 0.00
+
+    result.textContent = ""; //Clear results
 }
 
 // Function to make  an order
