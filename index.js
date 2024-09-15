@@ -71,7 +71,29 @@ function addToOrder(itemName) {
 function clearOrder() {
     const orderItemList = document.getElementById('order-items');
     const orderTotalElement = document.getElementById('order-total');
+
+    orderItemList.innerHTML = ""; //Empty string to clear orders
+
+    orderTotalElement.textContent = "0.00"; // Reset total to 0.00
 }
+
+// Function to make  an order
+function makeOrder() {
+    const  orderTotalElement = document.getElementById('order-total');
+    const total = parseFloat(orderTotalElement.textContent)
+    const result = document.getElementById('result');
+
+    // If else  statement to check if order is empty
+    if (total === 0) {
+        result.textContent = "Place Your Order😊";
+    } else {
+        result.textContent = "Your order is ready for Collection. Your bill is R" + total.toFixed(2);
+    }
+        
+
+
+}
+
 
 // Function to initialize the menu system
 function initMenuSystem(menu) {
