@@ -8,7 +8,8 @@ const menu = {
 // Function to display menu items by category
 function displayMenuItems(menu) {
     // Get the menu container element from the HTML
-    const menuContainer = document.getElementById('menu')
+    const menuContainer = document.getElementById('menu');
+
     // Loop through each category and its items in the menu object
     for(const category in menu) {
           // Create an element to represent the category
@@ -24,16 +25,16 @@ function displayMenuItems(menu) {
           // Loop through the items in the category and create list items
           menu[category].forEach(item => {
               // Create a list item element
-              const listItems = document.createElement('li');
+              const itemElement = document.createElement('li');
   
               //content for each list  item
-              listItems.textContent = item;
+              itemElement.textContent = item;
   
               // Attach a click event listener to the list items to add it to the order
-              listItems.addEventListener('click', () => addToOrder(item));
+              itemElement.addEventListener('click', () => addToOrder(item));
   
               // Append the list item to the list of items
-              listItems.appendChild(listItems);
+              itemList.appendChild(itemElement);
   
           });
 
