@@ -54,12 +54,16 @@ function addToOrder(itemName) {
     const  orderItem = document.createElement('li');
 
     // Set the text content of the list item to the item name
-
+    orderItem.textContent = itemName;
     // Append the list item to the order items list
-
+    orderItemList.appendChild(orderItem)
     // Calculate and update the total price
+    const currentTotal = parseFloat(orderTotalElement.textContent);
+    const total = currentTotal  + 75.50;  // assuming each item costs R75.50
+
 
     // Update the text content of the order total element with the new total
+    orderTotalElement.textContent = total.toFixed(2);
 }
 
 // Function to initialize the menu system
