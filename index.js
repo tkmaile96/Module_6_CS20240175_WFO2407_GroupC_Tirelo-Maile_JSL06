@@ -90,9 +90,11 @@ function makeOrder() {
         result.textContent = "Your order is ready for Collection. Your bill is R" + total.toFixed(2);
     }
         
-
-
 }
+
+// Event listerner for the Buttons
+document.getElementById("cancel-order").addEventListener('click', clearOrder);
+document.getElementById("checkout").addEventListener('click', makeOrder);
 
 
 // Function to initialize the menu system
